@@ -1,0 +1,25 @@
+<div class="dashboard-container">
+  <mat-card>
+    <mat-card-title>Dashboard</mat-card-title>
+    <mat-card-content>
+      <div class="stats">
+        <mat-card class="stat-card">
+          <mat-card-title>Ingresos</mat-card-title>
+          <mat-card-content>{{ dashboard?.totalIngresos }}</mat-card-content>
+        </mat-card>
+
+        <mat-card class="stat-card">
+          <mat-card-title>Egresos</mat-card-title>
+          <mat-card-content>{{ dashboard?.totalEgresos }}</mat-card-content>
+        </mat-card>
+
+        <mat-card class="stat-card">
+          <mat-card-title>Balance</mat-card-title>
+          <mat-card-content>{{ dashboard?.balance }}</mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
+
+    <button mat-raised-button color="primary" (click)="toTransaction()">Ir a movimientos</button>
+  </mat-card>
+</div>

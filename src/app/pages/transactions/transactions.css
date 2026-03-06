@@ -1,0 +1,32 @@
+.transaction-container {
+  padding: 24px;
+}
+
+mat-card {
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  padding: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.table-container {
+  padding: 0 24px;
+}
+
+mat-table {
+  width: 100%;
+}
+
+mat-header-cell, mat-cell {
+  padding: 8px;
+}
+
+.botones {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}

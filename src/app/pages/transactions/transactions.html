@@ -1,0 +1,82 @@
+
+<div class="transaction-container">
+<mat-card>
+  <mat-card-title>Crear nuevos movimientos</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <input matInput type="text" name="categoria" [(ngModel)]="transactionData.categoria" placeholder="Introduzca la categoria">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Descripcion</mat-label>
+      <input matInput type="text" name="descripcion" [(ngModel)]="transactionData.descripcion" placeholder="Introduzca la descripcion">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Monto</mat-label>
+      <input matInput type="number" name="monto" [(ngModel)]="transactionData.monto" placeholder="Introduzca el monto">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo de movimiento</mat-label>
+      <mat-select name="tipoTransaccion" [(ngModel)]="transactionData.tipoTransaccion" placeholder="Introduzca la descripcion">
+        <mat-option value="EGRESO">EGRESO</mat-option>
+        <mat-option value="INGRESO">INGRESO</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <div class="botones">
+    <button mat-raised-button color="primary" *ngIf="!editando" (click)="create()">Crear</button>
+    <button mat-raised-button color="primary" *ngIf="editando" (click)="onUpdate()">Actualizar</button>
+    <button mat-raised-button color="primary" *ngIf="editando" (click)="cancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="toDashboard()">Ir al dashboard</button>
+
+
+    </div>
+
+  </mat-card-content>
+</mat-card>
+</div>
+
+
+<div class="table-container">
+    <mat-table [dataSource]="MovimientoData">
+        <ng-container matColumnDef="categoria">
+            <mat-header-cell *matHeaderCellDef>Categoria</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.categoria}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="descripcion">
+            <mat-header-cell *matHeaderCellDef>Descripcion</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.descripcion}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="monto">
+            <mat-header-cell *matHeaderCellDef>Moto</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.monto}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="tipoTransaccion">
+            <mat-header-cell *matHeaderCellDef>Tipo</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.tipoTransaccion}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="createdAt">
+            <mat-header-cell *matHeaderCellDef>Fecha</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.createdAt}}</mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="acciones" >
+            <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+              <mat-cell *matCellDef="let item">
+                 <button mat-raised-button color="primary" (click)="onDelete(item.id)">🗑️</button>
+                  <button mat-raised-button color="primary" (click)="onEdit(item)">🔄</button>
+              </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

@@ -1,0 +1,22 @@
+<div class="login-container">
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="text" name="email" [(ngModel)]="loginData.email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" [(ngModel)]="loginData.password">
+    </mat-form-field>
+
+    <div class="botones">
+    <button mat-raised-button color="primary" (click)="onLogin()">Iniciar sesion</button>
+    <button mat-raised-button color="primary" (click)="toRegister()">Registrarse</button>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+</div>

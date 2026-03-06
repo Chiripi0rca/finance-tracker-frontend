@@ -1,0 +1,2 @@
+la funcion del interceptor es interceptar todas las peticiones que salen del del frontend hacian el backend 
+y les agrega automaticamente el header (Authorization: Bearer 'token')
