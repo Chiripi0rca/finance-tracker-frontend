@@ -67,7 +67,7 @@ export const environment = {
 [finance-tracker-backend](https://github.com/Chiripi0rca/finance-tracker-backend)
 
 ### Autor
-Ricardo — [GitHub](https://github.com/Chiripi0rca)
+Ricardo Ramos Puga— [GitHub](https://github.com/Chiripi0rca)
 
 ---
 
@@ -119,4 +119,4 @@ Open `http://localhost:4200` in your browser.
 [finance-tracker-backend](https://github.com/Chiripi0rca/finance-tracker-backend)
 
 ### Author
-Ricardo — [GitHub](https://github.com/Chiripi0rca)
+Ricardo Ramos Puga — [GitHub](https://github.com/Chiripi0rca)
