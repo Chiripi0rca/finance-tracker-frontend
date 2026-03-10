@@ -28,6 +28,7 @@ export class Login {
       this.authserive.login(this.loginData).subscribe({
         next: (response) => {
           this.authserive.saveToken(response.token);
+          this.authserive.saveRefreshToken(response.refreshToken);
           this.router.navigate(['/dashboard'])
         },
       });

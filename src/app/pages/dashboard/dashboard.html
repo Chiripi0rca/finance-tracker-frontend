@@ -1,23 +1,35 @@
 <div class="dashboard-container">
   <mat-card>
-    <mat-card-title>Dashboard</mat-card-title>
+    <mat-card-title>Dashboard - Resumen del mes</mat-card-title>
     <mat-card-content>
       <div class="stats">
-        <mat-card class="stat-card">
+        <mat-card class="stat-card ingreso">
           <mat-card-title>Ingresos</mat-card-title>
-          <mat-card-content>{{ dashboard?.totalIngresos }}</mat-card-content>
+          <mat-card-content>{{ dashboard.totalIngresos | number: '1.2-2'}}</mat-card-content>
         </mat-card>
 
-        <mat-card class="stat-card">
+        <mat-card class="stat-card egreso">
           <mat-card-title>Egresos</mat-card-title>
-          <mat-card-content>{{ dashboard?.totalEgresos }}</mat-card-content>
+          <mat-card-content>{{ dashboard.totalEgresos | number: '1.2-2' }}</mat-card-content>
         </mat-card>
 
-        <mat-card class="stat-card">
+        <mat-card class="stat-card balance">
           <mat-card-title>Balance</mat-card-title>
-          <mat-card-content>{{ dashboard?.balance }}</mat-card-content>
+          <mat-card-content>{{ dashboard.balance | number: '1.2-2' }}</mat-card-content>
         </mat-card>
       </div>
+
+      <div class = "graficas">
+       <div class = "graficas-item">
+        <h3>Comparativa</h3>
+        <canvas #graficaBarras></canvas>
+      </div>
+
+      <div class="graficas-item">
+        <h3>Distribucion</h3>
+        <canvas #graficaDona></canvas>
+      </div>
+    </div>
     </mat-card-content>
 
     <button mat-raised-button color="primary" (click)="toTransaction()">Ir a movimientos</button>

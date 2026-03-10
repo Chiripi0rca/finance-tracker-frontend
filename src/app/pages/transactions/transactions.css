@@ -30,3 +30,12 @@ mat-header-cell, mat-cell {
   gap: 16px;
   margin-top: 16px;
 }
+
+.paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 16px;
+}
