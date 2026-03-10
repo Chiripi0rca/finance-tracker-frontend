@@ -1,59 +1,130 @@
-# FinanceTrackerFrontend
+# Finance Tracker — Frontend
+> Aplicación web para gestión de finanzas personales construida con Angular y Angular Material.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+---
 
-## Development server
+## 🇲🇽 Español
 
-To start a local development server, run:
+### Descripción
+Frontend desarrollado con Angular 21 que consume la API REST de Finance Tracker. Permite a los usuarios registrar y visualizar sus movimientos financieros con dashboard mensual, gráficas interactivas, filtros y exportación de datos.
 
+### Tecnologías
+- Angular 21
+- Angular Material
+- Chart.js
+- TypeScript
+- RxJS
+
+### Características
+- Registro e inicio de sesión con JWT
+- Refresh Token automático — el usuario no necesita volver a iniciar sesión cuando el token expira
+- Interceptor HTTP que agrega el token automáticamente en cada petición
+- Guard de rutas — redirige al login si no hay sesión activa
+- Dashboard mensual con total de ingresos, egresos y balance
+- Gráfica de barras comparativa (ingresos vs egresos vs balance)
+- Gráfica de dona con distribución de gastos
+- CRUD completo de transacciones
+- Categorías predefinidas con enum (COMIDA, RENTA, ENTRETENIMIENTO, SALUD, NOMINA, TRANSPORTE, OTROS)
+- Filtros opcionales por categoría y mes
+- Paginación con navegación entre páginas
+- Exportación de transacciones a CSV
+
+### Instalación local
+**Requisitos:**
+- Node.js 18+
+- Angular CLI 21
+
+**Pasos:**
 ```bash
+# 1. Clonar el repositorio
+git clone https://github.com/Chiripi0rca/finance-tracker-frontend.git
+cd finance-tracker-frontend
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Correr el proyecto
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Abrir en `http://localhost:4200`
 
-## Code scaffolding
+> El backend debe estar corriendo en `http://localhost:8080`
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Páginas
+| Ruta | Descripción | Auth |
+|------|-------------|------|
+| /login | Inicio de sesión | No |
+| /register | Registro de usuario | No |
+| /dashboard | Resumen mensual con gráficas | Sí |
+| /transactions | CRUD + filtros + paginación + exportar CSV | Sí |
 
+### Backend relacionado
+[finance-tracker-backend](https://github.com/Chiripi0rca/finance-tracker-backend)
+
+### Autor
+Ricardo Ramos Puga — [GitHub](https://github.com/Chiripi0rca)
+
+---
+
+## 🇺🇸 English
+
+### Description
+Frontend built with Angular 21 that consumes the Finance Tracker REST API. Allows users to register and visualize their financial transactions with a monthly dashboard, interactive charts, filters, and data export.
+
+### Tech Stack
+- Angular 21
+- Angular Material
+- Chart.js
+- TypeScript
+- RxJS
+
+### Features
+- User registration and login with JWT
+- Automatic Refresh Token — user stays logged in when access token expires
+- HTTP Interceptor that automatically attaches the token to every request
+- Route Guard — redirects to login if no active session
+- Monthly dashboard with total income, expenses and balance
+- Bar chart comparing income vs expenses vs balance
+- Doughnut chart with expense distribution
+- Full CRUD for transactions
+- Predefined category enum (COMIDA, RENTA, ENTRETENIMIENTO, SALUD, NOMIDA, TRANSPORTE, OTROS)
+- Optional filters by category and month
+- Pagination with page navigation
+- CSV export for all transactions
+
+### Local Setup
+**Requirements:**
+- Node.js 18+
+- Angular CLI 21
+
+**Steps:**
 ```bash
-ng generate component component-name
+# 1. Clone the repository
+git clone https://github.com/Chiripi0rca/finance-tracker-frontend.git
+cd finance-tracker-frontend
+
+# 2. Install dependencies
+npm install
+
+# 3. Run the project
+ng serve
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Open at `http://localhost:4200`
 
-```bash
-ng generate --help
-```
+> The backend must be running at `http://localhost:8080`
 
-## Building
+### Pages
+| Route | Description | Auth |
+|-------|-------------|------|
+| /login | Login | No |
+| /register | Register | No |
+| /dashboard | Monthly summary with charts | Yes |
+| /transactions | CRUD + filters + pagination + CSV export | Yes |
 
-To build the project run:
+### Related Backend
+[finance-tracker-backend](https://github.com/Chiripi0rca/finance-tracker-backend)
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Author
+Ricardo Ramos Puga — [GitHub](https://github.com/Chiripi0rca)
